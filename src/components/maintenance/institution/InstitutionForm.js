@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef} from "react";
-import {  TextField,  Box,  Button,  Typography,  FormControlLabel,  Checkbox,  Grid,  FormControl,  InputLabel, Divider, CircularProgress, InputAdornment, IconButton, Drawer, makeStyles} from "@material-ui/core";
+import {  TextField,  Box,  Button,  Typography,  FormControlLabel,  Checkbox,  Grid,  FormControl,  InputLabel, Divider, CircularProgress, InputAdornment, IconButton, Drawer, makeStyles, Grow, Slide} from "@material-ui/core";
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import {InstitutionModel, InstitutionModelValidation} from './Model';
@@ -44,14 +44,14 @@ const InstitutionFormLayout= (props) =>{
 useEffect(() => {
   console.log(id);
   
-  if(id!=0 || id==undefined){
+  if( id=='undefined'){
           setIsLoading(true)
           fetchInstitution(id).then(item => {
             setTimeout(() => {
               setSelectedItem(item);
               props.setValues({...item});
               setIsLoading(false)
-            }, 2000);
+            }, 1000);
            
             
           });
@@ -74,33 +74,26 @@ useEffect(() => {
         >
         
           <Typography
-            variant="h4"
+            variant="h5"
             color="primary" style={{marginBottom:10}}
           >
-             {id==0?<Add style={{marginRight:5}} fontSize="large"/>:<Edit  fontSize="medium"/>}
             
-            
-            {id==0?"Add":"Update"} Institution
+            {id==0 || id==undefined ? "Add":"Update"} Institution
           </Typography>
       
-        <IconButton color="primary" component={Link} to="/institutionRef">
+        <IconButton color="primary" component={Link} to="/institutionIndex">
           <CloseIcon/>
         </IconButton>
       </Grid>
 
     
      
-    <Divider style={{marginBottom:10}}/>
+    {/* <Divider style={{marginBottom:10}}/> */}
 
-{isLoading && <div style={{marginTop:10}}>
-         <Typography variant="body1" color="primary">
-           <FontAwesomeIcon icon={faCompactDisc} pulse style={{color:"orange",marginRight:10}} size="2x" />
-           
-                  Loading Details Please Wait...</Typography>
-      </div> } 
+
 
   <Form  >
-   <div  className={classes.scrollbar}>
+   
      <Grid container spacing={1}>
     
      <Grid item md={12}>
@@ -113,11 +106,15 @@ useEffect(() => {
              InputLabelProps={{
                className: classes.floatingLabelFocusStyle
              }}
-             id="outlined-dense"
+              // InputProps={{classes:{
+              //   notchedOutline: classes.notchedOutline
+              // }}}
+            
+            
              label="Merchant ID"
              className={classes.textField}
              margin="dense"
-              variant="outlined"
+            variant="outlined"
              value={values.merchantId}
              name="merchantId" id="merchantId"
               onChange={handleChange} 
@@ -359,26 +356,155 @@ useEffect(() => {
                      />
          </Grid>
        
-         <Grid item xs ={12} sm={12} sm={12}>
-         {/* {isSubmitting && <CustomLinearProgress  /> } */}
-       
-         
-                
+         <Grid item xs ={12} sm={12} md={6}>
+             <TextField
+                         InputLabelProps={{
+                         className: classes.floatingLabelFocusStyle
+                         }}
+                         id="outlined-dense"
+                         label="Approved Billing Report FN"
+                         className={classes.textField}
+                         margin="dense"
+                          variant="outlined"
+                         value={values.approvedBillingRpt}
+                         name="approvedBillingRpt" id="approvedBillingRpt"
+                         onChange={handleChange} 
+                     />
+         </Grid>
+         <Grid item xs ={12} sm={12} md={6}>
+             <TextField
+                         InputLabelProps={{
+                         className: classes.floatingLabelFocusStyle
+                         }}
+                         id="outlined-dense"
+                         label="Declined Billing Report FN"
+                         className={classes.textField}
+                         margin="dense"
+                          variant="outlined"
+                         value={values.declinedBillingRpt}
+                         name="declinedBillingRpt" id="declinedBillingRpt"
+                         onChange={handleChange} 
+                     />
+         </Grid>
+         <Grid item xs ={12} sm={12} md={6}>
+             <TextField
+                         InputLabelProps={{
+                         className: classes.floatingLabelFocusStyle
+                         }}
+                         id="outlined-dense"
+                         label="Approved Billing Return File FN"
+                         className={classes.textField}
+                         margin="dense"
+                          variant="outlined"
+                         value={values.approvedBillingRtrn}
+                         name="approvedBillingRtrn" id="approvedBillingRtrn"
+                         onChange={handleChange} 
+                     />
+         </Grid>
+         <Grid item xs ={12} sm={12} md={6}>
+             <TextField
+                         InputLabelProps={{
+                         className: classes.floatingLabelFocusStyle
+                         }}
+                         id="outlined-dense"
+                         label="Declined Billing Return FN"
+                         className={classes.textField}
+                         margin="dense"
+                          variant="outlined"
+                         value={values.declinedBillingRtrn}
+                         name="declinedBillingRtrn" id="declinedBillingRtrn"
+                         onChange={handleChange} 
+                     />
+         </Grid>
+         <Grid item xs ={12} sm={12} md={6}>
+             <TextField
+                         InputLabelProps={{
+                         className: classes.floatingLabelFocusStyle
+                         }}
+                         id="outlined-dense"
+                         label="Merch Decline Code Max"
+                         className={classes.textField}
+                         margin="dense"
+                          variant="outlined"
+                         value={values.merchDeclineCodeMax}
+                         name="merchDeclineCodeMax" id="merchDeclineCodeMax"
+                         onChange={handleChange} 
+                     />
+         </Grid>
+         <Grid item xs ={12} sm={12} md={6}>
+             <TextField
+                         InputLabelProps={{
+                         className: classes.floatingLabelFocusStyle
+                         }}
+                         id="outlined-dense"
+                         label="Inst Bill File Type"
+                         className={classes.textField}
+                         margin="dense"
+                          variant="outlined"
+                         value={values.billFileType}
+                         name="billFileType" id="billFileType"
+                         onChange={handleChange} 
+                     />
+         </Grid>
+         <Grid item xs ={12} sm={12} md={6}>
+             <TextField
+                         InputLabelProps={{
+                         className: classes.floatingLabelFocusStyle
+                         }}
+                         id="outlined-dense"
+                         label="Padding Position"
+                         className={classes.textField}
+                         margin="dense"
+                          variant="outlined"
+                         value={values.paddingPosition}
+                         name="paddingPosition" id="paddingPosition"
+                         onChange={handleChange} 
+                     />
+         </Grid>
+         <Grid item xs ={12} sm={12} md={6}>
+             <TextField
+                         InputLabelProps={{
+                         className: classes.floatingLabelFocusStyle
+                         }}
+                         id="outlined-dense"
+                         label="Padding Character"
+                         className={classes.textField}
+                         margin="dense"
+                          variant="outlined"
+                         value={values.paddingChar}
+                         name="paddingChar" id="paddingChar"
+                         onChange={handleChange} 
+                     />
          </Grid>
      </Grid> 
-     </div>
-     <Box display="flex"   >
+     
+     
+   {/* <Grow in={true} timeout={1000}> */}
+   <Slide direction="up" in={true} mountOnEnter unmountOnExit timeout={700}>
+ <AppBar position="fixed" className={classes.appBar}>
+       <Toolbar >
+       
+       
+         <Box display="flex" flexDirection="row" justifyContent="flex-end" style={{ width: '100%' }}   >
                    <Box  flexGrow={1}> {/* {isSubmitting  && <Typography variant="subtitle1"> Please wait...</Typography>} */}
-                 
+                  {isLoading && 
+                  <Box style={{marginTop:10}} color="secondary.dark">
+                  <Typography variant="body1" >
+                    {/* <FontAwesomeIcon icon={faCompactDisc} pulse style={{color:"orange",marginRight:10}} size="2x" /> */}
+                   
+                     <FontAwesomeIcon icon={faSpinner} pulse size="2x" style={{marginRight:10}} color="secondary"/>
+                    
+                   
+                    
+                            Loading Details Please Wait...</Typography>
+                </Box> } 
                  </Box>
                 
                
                    <Box>
                       
-                       {/* <SaveButton  type="submit"    className={classes.button}>
-                         Save
-                       </SaveButton> */}
-                       <Button component={Link} to="/institutionRef"  variant="contained" className={classes.button}  disabled= {(isSubmitting||isLoading)?true:false}
+                  
+                       <Button component={Link} to="/institutionIndex"  variant="contained" className={classes.button}  disabled= {(isSubmitting||isLoading)?true:false}
                         
                        disableElevation
                        color="secondary"
@@ -399,32 +525,21 @@ useEffect(() => {
                      
                    
              </Box>
-   
-   
-     {/* <AppBar position="fixed" className={classes.appBar}>
-       <Toolbar variant="dense">
-       
-         <Box display="flex" flexDirection="row" justifyContent="flex-end" style={{ width: '100%' }}>
-         
-                      <Box>
-                       <Button color="inherit">
-                         Save
-                       </Button>
-                      </Box>
-         </Box>
-       
-       
          
          
        </Toolbar>
      </AppBar>
-    */}
+   {/* </Grow> */}
+   </Slide>
+   
+    
+   
    
      </Form >
   
  
 
-                    {status=='success' && <Redirect to="/institutionRef"/>}
+                    {status=='success' && <Redirect to="/institutionIndex"/>}
 
 
    

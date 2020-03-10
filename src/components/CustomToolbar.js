@@ -5,15 +5,12 @@ import { grey } from '@material-ui/core/colors';
 const CustomToolbar = (props) => {
     return (
        <div >
-            <Toolbar variant="dense" 
+            <Toolbar 
         // style={{backgroundColor:"#f2f8ff",borderRadius:3}}
-        style={{marginLeft:0,paddingLeft:1}}
+        // style={{marginLeft:15}}
         >
-                 <Typography   color="primary" variant="span" className={"MuiCardHeader-title"}
-                 style={{
-                    
-                   
-                 flexGrow:1}}
+                 <Typography   color="primary" variant="h5" 
+                 style={{flexGrow:1,paddingTop:5}}
                  
                  >{props.title}</Typography>
                 <div>

@@ -25,7 +25,15 @@ export const  InstitutionModel = {
     batchNumInitVal:'',
     isCounterResetAllowed: false,
     batchNumLenLimit:'',
-    currentbatchNum:''
+    currentbatchNum:'',
+    approvedBillingRpt:'',
+    declinedBillingRpt:'',
+    approvedBillingRtrn:'',
+    declinedBillingRtrn:'',
+    merchDeclineCodeMax:'',
+    billFileType:'',
+    paddingPosition:'',
+    paddingChar:''
   };
 
   InstitutionModel.PropTypes={

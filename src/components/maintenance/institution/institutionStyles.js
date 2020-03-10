@@ -8,7 +8,8 @@ export const useStyles = makeStyles(theme => ({
     appBar: {
       top: 'auto',
       bottom: 0,
-      zIndex: theme.zIndex.drawer + 1,
+      // zIndex: theme.zIndex.drawer + 1,
+      background:theme.palette.background.paper
     },
     container: {
       display: "flex",
@@ -18,7 +19,7 @@ export const useStyles = makeStyles(theme => ({
       //   marginLeft: theme.spacing(1),
       marginRight: theme.spacing(1),
       "&:hover": {
-        borderColor: theme.palette.info.dark,
+        borderColor: theme.palette.secondary.light,
         borderWidth: 2
       },
       width: "100%"
@@ -31,6 +32,7 @@ export const useStyles = makeStyles(theme => ({
     },
     button: {
       marginRight:3,
+      minWidth:100
       // backgroundColor: theme.palette.info.main,
       // color: theme.palette.grey[50],
       // "&:hover": {
@@ -58,7 +60,9 @@ export const useStyles = makeStyles(theme => ({
     },
     
 scrollbar: {
-  height:500,width:"100%",padding:10,
+  // height:470,
+  width:"100%",padding:10,
+  maxHeight:400,
   // "height": "300px;",
   "overflow-y": "auto",
 
@@ -67,7 +71,18 @@ scrollbar: {
   // "scrollbar-highlight-color":"dimgrey",
   marginBottom:10
   }
-  
+  ,
+  notchedOutline: {
+    // borderWidth: "1px",
+        //   '&:hover':{
+        //   borderColor:   "yellow !important"
+        // },
+        "&:hover:not($disabled):not($focused):not($error)": {
+          borderColor: "red !important"
+        }
+        // borderColor:   theme.palette.secondary.main
+      // "yellow !important"
+  }
   }));
 
 

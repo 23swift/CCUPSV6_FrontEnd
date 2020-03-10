@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Navigation from './Navigation';
 import {BrowserRouter as Router  } from "react-router-dom";
 import { makeStyles } from '@material-ui/styles';
+import { Grow } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -9,7 +10,7 @@ const useStyles = makeStyles(theme => ({
     },
     main:{
         
-        // paddingTop:30,
+         paddingTop:80,
         
         // [theme.breakpoints.down('md')]: {
         //     marginLeft:0
@@ -28,8 +29,12 @@ const Layout = (props) => {
         <div>
             <Router>
                 <Navigation drawerOpen={drawerOpen} setDrawerOpen={setDrawerOpen} />
-                <main style={{marginLeft:drawerOpen? 250 : 0}}>
-                        {props.children}
+                <main style={{marginLeft:drawerOpen? 250 : 0, paddingTop:10}}>
+                
+                    {props.children}
+                
+                        
+               
                 </main>
             </Router>
             

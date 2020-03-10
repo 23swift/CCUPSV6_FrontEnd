@@ -12,11 +12,13 @@ const themeConfig={
     bgcolor:"#f2f8ff"
   },
   overrides:{
+    
     MuiButton:{
       label:{
          textDecoration: "none",
-      textTransform: 'none'
-      }
+        textTransform: 'none'
+      },
+      minWidth:300
      
     },
     MuiPaper:{
@@ -190,8 +192,9 @@ MuiListItemIcon:{
               
           
       },
-   color:"red"
+  
   },
+  
   "palette": {
     "tonalOffset": 0.2,
     "background": { "paper": "#fafafa", "default": "#fafafa" },
@@ -269,12 +272,12 @@ MuiListItemIcon:{
       dark: lightBlue[700],
       contrastText: '#eeeeee',
     },
-    warning: {
-      light: purple[300],
-      main: purple[500],
-      dark: purple[700],
-      contrastText: '#eeeeee',
-    },
+    // warning: {
+    //   light: purple[300],
+    //   main: purple[500],
+    //   dark: purple[700],
+    //   contrastText: '#eeeeee',
+    // },
     typography: {
       
       htmlFontSize: 14,

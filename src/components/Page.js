@@ -1,5 +1,5 @@
 import React from 'react'
-import { Typography, Divider, makeStyles, Box, TextField, AppBar, Toolbar, IconButton, Paper, fade, InputBase} from '@material-ui/core';
+import { Typography, Divider, makeStyles, Box, TextField, AppBar, Toolbar, IconButton, Paper, fade, InputBase, Grow} from '@material-ui/core';
 
 import {  } from '@material-ui/core/IconButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -78,6 +78,7 @@ searchBar:{
 const Page = (props) => {
     const classes =useStyles();
     return (
+      
         <div className={classes.root}>
             
                <Box display="flex" flexDirection="row" >
@@ -114,7 +115,10 @@ const Page = (props) => {
            
             {props.title && <Divider style={{marginBottom:10}}/>}
             <div className={classes.page} >
-                {props.children}
+            {/* <Grow in={true} timeout={1000}> */}
+               {props.children}
+            {/* </Grow> */}
+               
             </div>
             
         </div>

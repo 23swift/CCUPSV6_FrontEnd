@@ -3,7 +3,7 @@ import { Drawer, List, ListItem, ListItemIcon, ListItemText, Paper, Divider, Box
 import IconButton from "@material-ui/core/IconButton";
 import { makeStyles } from "@material-ui/core/styles";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown, faColumns } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faColumns, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { menuList } from './helper/MenuManager';
 import Collapse from '@material-ui/core/Collapse';
 import './subMenu.css'
@@ -21,7 +21,7 @@ const useStyles = makeStyles(theme => ({
     drawerListItem:{
           borderBottomRightRadius :30,
           borderTopRightRadius:30,
-        
+        marginRight:10,
           '&:hover':{
           
             // color: "#f2f8ff",
@@ -42,6 +42,10 @@ const MainMenu = () => {
     const [openSubMenu, setOpenSubMenu] = useState("");
     
     const ToggleSubMenu=(pMenuText)=>{
+      if (openSubMenu==pMenuText){
+        setOpenSubMenu("");
+        return;
+      }
         setOpenSubMenu(pMenuText);
     }        
 
@@ -63,7 +67,7 @@ const MainMenu = () => {
 
                                 <ListItemText primary={<Typography color="primary"  style={{fontWeight:400,fontSize:"15px"}} >{item.displayText}</Typography>} />
                                 
-                                <FontAwesomeIcon icon={faChevronDown} size="sm" className={classes.drawerIcon} /> 
+                                <FontAwesomeIcon icon={openSubMenu === item.mainMenu? faChevronUp:faChevronDown} size="sm" className={classes.drawerIcon} /> 
                                 
                             </ListItem>
                             <Collapse in={openSubMenu === item.mainMenu} timeout="auto" unmountOnExit>
@@ -90,7 +94,7 @@ const MainMenu = () => {
             ))}
             
                     
-            <ListItem button >
+            <ListItem button component={Link} to="/">
                                 <ListItemIcon>
                                 <FontAwesomeIcon icon={faColumns} size="sm" className={classes.drawerIcon} /> 
                                 </ListItemIcon>

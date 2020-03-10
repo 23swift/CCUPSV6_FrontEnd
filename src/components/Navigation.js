@@ -23,6 +23,10 @@ import color from "@material-ui/core/colors/grey";
 import bdoLogo from '../img/bdoLogo2.png'
 import { menuList } from './helper/MenuManager';
 import MainMenu from "./MainMenu";
+import { FormatClearRounded } from "@material-ui/icons";
+import ClearIcon from '@material-ui/icons/Clear';
+
+
 const drawerWidth = 250;
 const linkStyle = {
   marginRight: 15
@@ -51,6 +55,7 @@ const useStyles = makeStyles(theme => ({
     //   display: 'block',
     //   // variant:"temporary"
     // }
+  margin:10
   },
   drawerPaper: {
     width: drawerWidth,
@@ -58,10 +63,17 @@ const useStyles = makeStyles(theme => ({
     
     // backgroundColor: "#f2f8ff",
     // color: "#043673",
-    // paddingRight:2,
+    paddingRight:10,
     
   },appBar: {
     zIndex: theme.zIndex.drawer + 1,
+  
+    // backgroundColor:'#043673'
+    background: 'linear-gradient(45deg, #054594 30%, #043673 90%)',
+  },
+  fullWidthAppBar: {
+    // zIndex: theme.zIndex.drawer + 1,
+    // marginLeft:drawerWidth,
     backgroundColor:'#043673'
   },
   toolbar: theme.mixins.toolbar,
@@ -103,7 +115,7 @@ const useStyles = makeStyles(theme => ({
 
   const [subMenuList, setSubMenuList] = useState([]);
   const handleDrawerToggle = () => {
-    console.log("test");
+
     
     props.setDrawerOpen(!props.drawerOpen);
   };
@@ -111,8 +123,9 @@ const useStyles = makeStyles(theme => ({
   return (
     <div>
      
-      <AppBar position="fixed" className={classes.appBar} >
-        <Toolbar  variant="dense">
+      <AppBar position="fixed"  className={classes.appBar} >
+
+        <Toolbar  >
         {!props.drawerOpen && 
   
   <IconButton onClick={handleDrawerToggle}
@@ -121,12 +134,13 @@ const useStyles = makeStyles(theme => ({
                         color="inherit"
                         aria-label="menu"
                       >
-                        <MenuIcon />
+                        {/* <MenuIcon /> */}
+                        <MenuOpenIcon/>
           </IconButton>
 }
-          
-          <Typography variant="h6" style={{flexGrow: 1}}>
-            CCUPS
+           <img src={bdoLogo} style={{height:50,borderRadius:3,marginRight:5}}/>
+          <Typography variant="subtitle1" style={{flexGrow: 1,paddingTop:25}}>
+            Credit Card Utility Payment System
           </Typography>
     
     <Button
@@ -149,38 +163,49 @@ const useStyles = makeStyles(theme => ({
           
         </Toolbar>
       </AppBar>
-            <Drawer 
-              className={classes.drawer}
-              variant="persistent"
-              open={props.drawerOpen}
-              onClose={handleDrawerToggle}
-              classes={{
-                paper: classes.drawerPaper
-              }}
-              PaperProps={{ elevation: 3 }}
+      
+      <Drawer 
+                  className={classes.drawer}
+                  variant="persistent"
+                  open={props.drawerOpen}
+                  onClose={handleDrawerToggle}
+                  classes={{
+                    paper: classes.drawerPaper
+                  }}
+                  PaperProps={{ elevation: 3 }}
 
-            >
-                 
-                     <List >
-                  <ListItem  >
-                  <div style={{minHeight:45}} />
-                  </ListItem>
-                  <ListItem  >
-                  <img src={bdoLogo} style={{height:60}}/>
-                               <IconButton color="primary" style={{marginLeft:80}} onClick={handleDrawerToggle}>
-                            <MenuOpenIcon/>
-                          </IconButton>
-                         
-                  </ListItem>
-                  <Divider style={{marginBottom:5}}/>
+                >
                     
-                              <MainMenu/>
-                              
- 
-                  </List>
-             
-            </Drawer>
-    </div>
+                        <List >
+                      <ListItem  disableGutters>
+                      <div style={{minHeight:35}} />
+                      </ListItem>
+                      <ListItem  disableGutters  >
+                      {/* <img src={bdoLogo} style={{height:60}}/> */}
+                      <Box display="flex" flexDirection="row" justifyContent="flex-end" style={{width:"100%"}}  p={0} m={0} >
+                        <Box item p={0} m={0}>
+                           <IconButton color="primary"  onClick={handleDrawerToggle}>
+                                {/* <MenuOpenIcon/> */}
+                                <ClearIcon/>
+                              </IconButton>
+                        </Box>
+                         
+                      </Box>
+                                 
+                            
+                      </ListItem>
+                      <Divider style={{marginBottom:5}}/>
+                        
+                                  <MainMenu/>
+                                  
+    
+                      </List>
+                
+                </Drawer>
+
+      </div>
+          
+    
   );
 };
 

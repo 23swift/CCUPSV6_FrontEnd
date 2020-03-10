@@ -17,7 +17,9 @@ const useStyles = makeStyles(theme => ({
       },
     },
     icon:{
-        color:theme.palette.secondary.main
+         color:theme.palette.warning.light,
+         marginRight:15
+       
     }
   }));
 const Home = () => {
