@@ -49,12 +49,12 @@ MuiListItemIcon:{
     },
     MuiFormLabel:{
       root:{
-               fontSize: 14,
+              //  fontSize: 14,
                color:"rgb(0, 60, 108)",
               // color:"red"
                
                
-      }
+      },borderColor:"red"
     },
     MuiInput:{
       underline:{
@@ -148,19 +148,25 @@ MuiListItemIcon:{
         verticalAlign: "middle"
     }
       
-    },
-    //  MuiDrawer: {
-    //   paper: {
-         
-      
-    //     //  background: "#01579B",
-    //     background:"#fff",
-        
-      
-        
-       
-    //   }
-    // }
+    },MuiOutlinedInput: {
+      root: {
+          position: 'relative',
+          '& $notchedOutline': {
+              borderColor: 'rgba(0, 0, 0, 0.23)',
+          },
+          '&:hover:not($disabled):not($focused):not($error) $notchedOutline': {
+              borderColor: '#4A90E2',
+              // Reset on touch devices, it doesn't add specificity
+              '@media (hover: none)': {
+                  borderColor: 'rgba(0, 0, 0, 0.23)',
+              },
+          },
+          '&$focused $notchedOutline': {
+              borderColor: '#4A90E2',
+              borderWidth: 1,
+          },
+      },
+  },
     MuiTableHead:{
       root: {
         backgroundColor:"#f4f5fd",

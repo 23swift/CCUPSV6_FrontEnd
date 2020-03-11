@@ -8,7 +8,7 @@ export const useStyles = makeStyles(theme => ({
     appBar: {
       top: 'auto',
       bottom: 0,
-      // zIndex: theme.zIndex.drawer + 1,
+      zIndex: theme.zIndex.drawer + 1,
       background:theme.palette.background.paper
     },
     container: {
@@ -17,7 +17,7 @@ export const useStyles = makeStyles(theme => ({
     },
     textField: {
       //   marginLeft: theme.spacing(1),
-      marginRight: theme.spacing(1),
+      // marginRight: theme.spacing(1),
       "&:hover": {
         borderColor: theme.palette.secondary.light,
         borderWidth: 2
@@ -77,13 +77,15 @@ scrollbar: {
         //   '&:hover':{
         //   borderColor:   "yellow !important"
         // },
-        "&:hover:not($disabled):not($focused):not($error)": {
-          borderColor: "red !important"
-        }
-        // borderColor:   theme.palette.secondary.main
+        // "&:hover:not($disabled):not($focused):not($error)": {
+        //   borderColor: "red !important"
+        // },
+        borderColor:   theme.palette.secondary.main
       // "yellow !important"
-  }
+  },
+  
   }));
+
 
 
 

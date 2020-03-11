@@ -219,8 +219,8 @@ const InstitutionIndex = () => {
                 />
                  */}
                  <CustomToolbar title="Institution List" >
-                <IconButton  component={Link} to="/institutionCreate/:id=0">
-                                    <PostAddIcon color="primary" />
+                <IconButton  component={Link} to="/institutionCreate/:id=0" color="secondary">
+                                    <PostAddIcon color="secondary" />
                               </IconButton>
                 </CustomToolbar>
               <CardContent>

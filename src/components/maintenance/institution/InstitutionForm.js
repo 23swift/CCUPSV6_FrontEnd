@@ -37,13 +37,14 @@ const InstitutionFormLayout= (props) =>{
     status,
     isSubmitting
   } = props;
-  
+  const inputLabel = React.useRef(null);
   const [selectedItem, setSelectedItem] = useState();
   const [isLoading, setIsLoading] = useState(false);
-
+  const [labelWidth, setLabelWidth] = React.useState(0);
+ 
 useEffect(() => {
-  console.log(id);
-  
+ 
+  setLabelWidth(inputLabel.current.offsetWidth);
   if( id=='undefined'){
           setIsLoading(true)
           fetchInstitution(id).then(item => {
@@ -81,7 +82,7 @@ useEffect(() => {
             {id==0 || id==undefined ? "Add":"Update"} Institution
           </Typography>
       
-        <IconButton color="primary" component={Link} to="/institutionIndex">
+        <IconButton color="secondary" component={Link} to="/institutionIndex">
           <CloseIcon/>
         </IconButton>
       </Grid>
@@ -103,9 +104,9 @@ useEffect(() => {
          
          <TextField
              
-             InputLabelProps={{
-               className: classes.floatingLabelFocusStyle
-             }}
+            //  InputLabelProps={{
+            //    className: classes.floatingLabelFocusStyle
+            //  }}
               // InputProps={{classes:{
               //   notchedOutline: classes.notchedOutline
               // }}}
@@ -158,7 +159,7 @@ useEffect(() => {
                        endAdornment: 
                         errors.institutionCode && touched.institutionCode && <TextFieldErrorIcon errorMsg={errors.institutionCode}/>
                          
-                          
+                
                      }}
                  />
          </Grid>
@@ -166,13 +167,13 @@ useEffect(() => {
                  <FormControl 
                   variant="outlined" 
                  className={classes.formControl} margin="dense">
-                 <InputLabel htmlFor="outlined-age-simple" className={classes.inputLabel}>
+                 <InputLabel ref={inputLabel} htmlFor="outlined-age-simple" className={classes.inputLabel}>
                      Padding Possition
                  </InputLabel>
                  <Select
                   value={values.paddingPos}
                   onChange={handleChange}
-                 //  labelWidth={labelWidth}
+                  labelWidth={labelWidth}
                  
                   name="paddingPos" id="paddingPos"
                  inputProps={{
