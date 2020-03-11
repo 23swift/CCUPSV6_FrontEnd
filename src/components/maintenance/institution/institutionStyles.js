@@ -151,5 +151,12 @@ scrollbar: {
   dialogContentText:{
 
     color:theme.palette.grey[50]
+  },
+  tHead:{
+
+    fontWeight:300,
+    fontSize:"1em",
+    borderBottom:"1px solid rgb(51, 120, 175)",
+    color:theme.palette.warning.main
   }
 }));

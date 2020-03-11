@@ -123,7 +123,8 @@ MuiListItemIcon:{
       },h5:{
         fontSize: "1.25em",
         lineHeight: "1.4em",
-        marginBottom: "15px"
+        // marginBottom: "15px"
+        marginBottom: "1px"
       }, 
     },
     MuiTablePagination:{
@@ -134,7 +135,7 @@ MuiListItemIcon:{
     MuiTableCell:{
       root:{
 
-        // borderBottom:"1px solid rgb(51, 120, 175)",
+        //  borderBottom:"1px solid rgb(51, 120, 175)",
         
       },
       body:{
@@ -176,8 +177,9 @@ MuiListItemIcon:{
   },
     MuiTableHead:{
       root: {
-        backgroundColor:"#f4f5fd",
+        // backgroundColor:"#f4f5fd",
         textTransform:"none"
+
       }
     }
   },

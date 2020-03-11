@@ -17,7 +17,7 @@ root:{
 page:{
     // background: "#f2f8ff",
     // minHeight:800,
-    // paddingTop:5,
+    paddingTop:10,
     
     marginBottom:60
 },
