@@ -138,7 +138,10 @@ const useStyles = makeStyles(theme => ({
                         <MenuOpenIcon/>
           </IconButton>
 }
-           <img src={bdoLogo} style={{height:50,borderRadius:3,marginRight:5}}/>
+           <Paper style={{padding:3, marginRight:7}} elevation={0}>
+                  <img src={bdoLogo} style={{height:40,borderRadius:3}}/>
+            </Paper>
+
           <Typography variant="subtitle1" style={{flexGrow: 1,paddingTop:25}}>
             Credit Card Utility Payment System
           </Typography>

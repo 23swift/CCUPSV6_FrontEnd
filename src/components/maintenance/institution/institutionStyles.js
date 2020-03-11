@@ -40,7 +40,17 @@ export const useStyles = makeStyles(theme => ({
       // }
     },
     floatingLabelFocusStyle: {
-      // color: theme.palette.primary.main
+      color: theme.palette.primary.main,
+      fontSize: 15,
+      root:{
+        fontSize: 15,
+        color:"rgb(0, 60, 108)",
+       // color:"red"
+        
+      
+      },
+      
+     
     },
     
     formControl: {

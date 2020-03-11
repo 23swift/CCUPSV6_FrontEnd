@@ -4,7 +4,7 @@ import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
-import { Button, Grid, Fab } from "@material-ui/core";
+import { Button, Grid, Fab, Box } from "@material-ui/core";
 
 import { IconButton } from "@material-ui/core";
 
@@ -20,6 +20,8 @@ import { Link } from 'react-router-dom';
 import { DeleteOutline, Add } from "@material-ui/icons";
 import  PostAddIcon  from '@material-ui/icons/PostAdd';
 import ClearIcon from '@material-ui/icons/Clear';
+import DescriptionIcon from '@material-ui/icons/Description';
+
 
 
 const InstitutionList = (props) => {
@@ -78,6 +80,17 @@ const handleChangeRowsPerPage = event => {
                
                <Grid container direction="row" justify="flex-end" spacing={2}>
                {/* <Fab   color="secondary" size="small"><MoreHorizIcon fontSize="small"/></Fab> */}
+               <Button 
+              //  onClick={()=>props.handleDetails(item.id)} 
+              component={Link} to={"/institutionDetails/"+item.id}
+                  color="primary"
+                  startIcon={
+                
+                    <DescriptionIcon  size="small"  />
+                
+                  
+                  
+                  } size="small"  >File Config</Button>
                <Button 
               //  onClick={()=>props.handleDetails(item.id)} 
               component={Link} to={"/institutionDetails/"+item.id}

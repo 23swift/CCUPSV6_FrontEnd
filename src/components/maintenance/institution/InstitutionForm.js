@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef} from "react";
 import {  TextField,  Box,  Button,  Typography,  FormControlLabel,  Checkbox,  Grid,  FormControl,  InputLabel, Divider, CircularProgress, InputAdornment, IconButton, Drawer, makeStyles, Grow, Slide} from "@material-ui/core";
-import Select from '@material-ui/core/Select';
-import MenuItem from '@material-ui/core/MenuItem';
+
 import {InstitutionModel, InstitutionModelValidation} from './Model';
 import {CustomLinearProgress} from '../../../customTheme'
 import {useStyles} from './institutionStyles'
@@ -21,6 +20,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import  AppBar  from '@material-ui/core/AppBar';
 import Toolbar  from '@material-ui/core/Toolbar';
 import Page from './../../Page';
+import SelectFormControl from "../../SelectFormControl";
 // const classes = useStyles();
 ////////////Component/////////////////
 
@@ -44,7 +44,7 @@ const InstitutionFormLayout= (props) =>{
  
 useEffect(() => {
  
-  setLabelWidth(inputLabel.current.offsetWidth);
+  
   if( id=='undefined'){
           setIsLoading(true)
           fetchInstitution(id).then(item => {
@@ -71,12 +71,12 @@ useEffect(() => {
         direction="row"
         justify="space-between"
         alignItems="center"  
-        // style={{backgroundColor:"#f4f5fd" }}
+      
         >
         
           <Typography
             variant="h5"
-            color="primary" style={{marginBottom:10}}
+            color="primary" 
           >
             
             {id==0 || id==undefined ? "Add":"Update"} Institution
@@ -102,15 +102,7 @@ useEffect(() => {
          </Grid>
        <Grid item xs ={12} sm={12} md={6}>
          
-         <TextField
-             
-            //  InputLabelProps={{
-            //    className: classes.floatingLabelFocusStyle
-            //  }}
-              // InputProps={{classes:{
-              //   notchedOutline: classes.notchedOutline
-              // }}}
-            
+         <TextField 
             
              label="Merchant ID"
              className={classes.textField}
@@ -124,9 +116,7 @@ useEffect(() => {
        <Grid item xs ={12} sm={12} md={6}>
              <TextField
                      
-                     InputLabelProps={{
-                     className: classes.floatingLabelFocusStyle
-                     }}
+                     
                      id="outlined-dense"
                      label="Billing File Type"
                      className={classes.textField}
@@ -164,38 +154,18 @@ useEffect(() => {
                  />
          </Grid>
          <Grid item xs ={12} sm={12} md={6}>
-                 <FormControl 
-                  variant="outlined" 
-                 className={classes.formControl} margin="dense">
-                 <InputLabel ref={inputLabel} htmlFor="outlined-age-simple" className={classes.inputLabel}>
-                     Padding Possition
-                 </InputLabel>
-                 <Select
-                  value={values.paddingPos}
-                  onChange={handleChange}
-                  labelWidth={labelWidth}
-                 
-                  name="paddingPos" id="paddingPos"
-                 inputProps={{
-                     name: 'paddingPos',
-                     id: 'outlined-age-simple',
-                 }}
-                 >
-                 <MenuItem value="0" selected={true}>
-                     <em>None</em>
-                 </MenuItem>
-                   <MenuItem value={10}>Start</MenuItem>
-                   <MenuItem value={20}>End</MenuItem>
-                 </Select>
-             </FormControl>
+                
+             <SelectFormControl value={values.paddingPos} label="Padding Possition" name="paddingPos" handleChange={handleChange}
+             selectList={[
+               {value:10,text:"Start"},
+               {value:20,text:"End"}
+             ]}/>
                
          </Grid>
    
          <Grid item xs ={12} sm={12} md={6}>
          <TextField
-                 InputLabelProps={{
-                 className: classes.floatingLabelFocusStyle
-                 }}
+                 
                  id="outlined-dense"
                  label="Institution Name"
                  className={classes.textField}
@@ -215,9 +185,7 @@ useEffect(() => {
          </Grid>
          <Grid item xs ={12} sm={12} md={6}>
                  <TextField
-                 InputLabelProps={{
-                 className: classes.floatingLabelFocusStyle
-                 }}
+                 
                  id="outlined-dense"
                  label="Padding Character"
                  className={classes.textField}
@@ -231,9 +199,7 @@ useEffect(() => {
          <Grid item xs ={12} sm={12} md={6}>
    
                      <TextField
-                     InputLabelProps={{
-                     className: classes.floatingLabelFocusStyle
-                     }}
+                     
                      id="outlined-dense"
                      label="Default Payment Allowed"
                      className={classes.textField}
@@ -267,9 +233,7 @@ useEffect(() => {
    
          <Grid item xs ={12} sm={12} md={6}>
              <TextField
-                         InputLabelProps={{
-                         className: classes.floatingLabelFocusStyle
-                         }}
+                        
                          id="outlined-dense"
                          label="Batch Number Max Value"
                          className={classes.textField}
@@ -282,9 +246,7 @@ useEffect(() => {
          </Grid>
          <Grid item xs ={12} sm={12} md={6}>
              <TextField
-                         InputLabelProps={{
-                         className: classes.floatingLabelFocusStyle
-                         }}
+                        
                          id="outlined-dense"
                          label="Decline Code Max Length"
                          className={classes.textField}
@@ -297,9 +259,7 @@ useEffect(() => {
          </Grid>
          <Grid item xs ={12} sm={12} md={6}>
              <TextField
-                         InputLabelProps={{
-                         className: classes.floatingLabelFocusStyle
-                         }}
+                        
                          id="outlined-dense"
                          label="Batch Number Initial Value"
                          className={classes.textField}
@@ -328,9 +288,7 @@ useEffect(() => {
          </Grid>
          <Grid item xs ={12} sm={12} md={6}>
              <TextField
-                         InputLabelProps={{
-                         className: classes.floatingLabelFocusStyle
-                         }}
+                        
                          id="outlined-dense"
                          label="Batch Number Length Limit"
                          className={classes.textField}
@@ -343,9 +301,7 @@ useEffect(() => {
          </Grid>
          <Grid item xs ={12} sm={12} md={6}>
              <TextField
-                         InputLabelProps={{
-                         className: classes.floatingLabelFocusStyle
-                         }}
+                        
                          id="outlined-dense"
                          label="Current Batch Number"
                          className={classes.textField}
@@ -359,9 +315,7 @@ useEffect(() => {
        
          <Grid item xs ={12} sm={12} md={6}>
              <TextField
-                         InputLabelProps={{
-                         className: classes.floatingLabelFocusStyle
-                         }}
+                        
                          id="outlined-dense"
                          label="Approved Billing Report FN"
                          className={classes.textField}
@@ -374,9 +328,7 @@ useEffect(() => {
          </Grid>
          <Grid item xs ={12} sm={12} md={6}>
              <TextField
-                         InputLabelProps={{
-                         className: classes.floatingLabelFocusStyle
-                         }}
+                        
                          id="outlined-dense"
                          label="Declined Billing Report FN"
                          className={classes.textField}
@@ -389,9 +341,7 @@ useEffect(() => {
          </Grid>
          <Grid item xs ={12} sm={12} md={6}>
              <TextField
-                         InputLabelProps={{
-                         className: classes.floatingLabelFocusStyle
-                         }}
+                        
                          id="outlined-dense"
                          label="Approved Billing Return File FN"
                          className={classes.textField}
@@ -404,9 +354,7 @@ useEffect(() => {
          </Grid>
          <Grid item xs ={12} sm={12} md={6}>
              <TextField
-                         InputLabelProps={{
-                         className: classes.floatingLabelFocusStyle
-                         }}
+                        
                          id="outlined-dense"
                          label="Declined Billing Return FN"
                          className={classes.textField}
@@ -419,9 +367,7 @@ useEffect(() => {
          </Grid>
          <Grid item xs ={12} sm={12} md={6}>
              <TextField
-                         InputLabelProps={{
-                         className: classes.floatingLabelFocusStyle
-                         }}
+                        
                          id="outlined-dense"
                          label="Merch Decline Code Max"
                          className={classes.textField}
@@ -434,9 +380,7 @@ useEffect(() => {
          </Grid>
          <Grid item xs ={12} sm={12} md={6}>
              <TextField
-                         InputLabelProps={{
-                         className: classes.floatingLabelFocusStyle
-                         }}
+                        
                          id="outlined-dense"
                          label="Inst Bill File Type"
                          className={classes.textField}
@@ -449,9 +393,7 @@ useEffect(() => {
          </Grid>
          <Grid item xs ={12} sm={12} md={6}>
              <TextField
-                         InputLabelProps={{
-                         className: classes.floatingLabelFocusStyle
-                         }}
+                        
                          id="outlined-dense"
                          label="Padding Position"
                          className={classes.textField}
@@ -464,9 +406,7 @@ useEffect(() => {
          </Grid>
          <Grid item xs ={12} sm={12} md={6}>
              <TextField
-                         InputLabelProps={{
-                         className: classes.floatingLabelFocusStyle
-                         }}
+                        
                          id="outlined-dense"
                          label="Padding Character"
                          className={classes.textField}

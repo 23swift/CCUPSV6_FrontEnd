@@ -29,7 +29,7 @@ const Layout = (props) => {
         <div>
             <Router>
                 <Navigation drawerOpen={drawerOpen} setDrawerOpen={setDrawerOpen} />
-                <main style={{marginLeft:drawerOpen? 250 : 0, paddingTop:10}}>
+                <main style={{marginLeft:drawerOpen? 250 : 0, paddingTop:5}}>
                 
                     {props.children}
                 

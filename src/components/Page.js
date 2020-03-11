@@ -16,7 +16,7 @@ root:{
 },
 page:{
     // background: "#f2f8ff",
-    minHeight:800,
+    // minHeight:800,
     // paddingTop:5,
     
     marginBottom:60
@@ -80,8 +80,10 @@ const Page = (props) => {
     return (
       
         <div className={classes.root}>
+            {props.title &&
             
-               <Box display="flex" flexDirection="row" >
+            
+            <Box display="flex" flexDirection="row" >
                     <Box letterSpacing="none" m={0} flexGrow={1} mb={1}>
                         <Typography variant="h3"  letterSpacing ="none" style={{color:'#043673'}}>
                          {props.title}
@@ -108,6 +110,9 @@ const Page = (props) => {
                    
                </Box>}
                </Box>
+            
+            }
+               
               
                
                 

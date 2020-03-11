@@ -8,11 +8,11 @@ import  Fab  from '@material-ui/core/Fab';
 import { LinearProgress } from '@material-ui/core';
 import { cyan } from '@material-ui/core/colors';
 const themeConfig={
-  body:{
-    bgcolor:"#f2f8ff"
-  },
+  
   overrides:{
-    
+   body:{
+    bgcolor:"#EEEEEE"
+  }, 
     MuiButton:{
       label:{
          textDecoration: "none",
@@ -49,24 +49,31 @@ MuiListItemIcon:{
     },
     MuiFormLabel:{
       root:{
-              //  fontSize: 14,
-               color:"rgb(0, 60, 108)",
+              //  fontSize: 15,
+              //  color:"rgb(0, 60, 108)",
               // color:"red"
                
                
       },borderColor:"red"
     },
-    MuiInput:{
-      underline:{
-        '&:before':{
-          borderBottom:"1px solid rgb(51, 120, 175)"
-        },
-       
-        // '&:hover':{
-        //   borderBottom:"1px solid rgb(51, 120, 175)"
-        // }
-      }
+    
+    MuiInputLabel: {
+      // color: theme.palette.primary.main,
+      
+      root:{
+        fontSize: 15,
+        color:"rgb(0, 60, 108)",
+       // color:"red"
+        
+      
+      },
+      outlined: {
+        '&$shrink': {
+           transform: 'translate(14px, -6px) scale(0.85)',
+          },
+      },
     },
+   
     MuiFormControlLabel:{
 
       root:{
@@ -203,7 +210,9 @@ MuiListItemIcon:{
   
   "palette": {
     "tonalOffset": 0.2,
-    "background": { "paper": "#fafafa", "default": "#fafafa" },
+    // "background": { "paper": "#fafafa", "default": "#fafafa" },
+    "background": { "paper": "#EEEEEE", "default": "#EEEEEE" },
+    
     "contrastThreshold": 3,
     "grey": {
       "50": "#fafafa",
@@ -228,12 +237,12 @@ MuiListItemIcon:{
       "hint": "rgba(0, 0, 0, 0.38)"
     },
     "divider": "rgba(0, 0, 0, 0.12)",
-    "secondary": {
-      "main": "#FBC02D",
-      "light": "rgb(251, 204, 87)",
-      "dark": "rgb(175, 134, 31)",
-      "contrastText": "#043a7b"
-    },
+    // "secondary": {
+    //   "main": "#FBC02D",
+    //   "light": "rgb(251, 204, 87)",
+    //   "dark": "rgb(175, 134, 31)",
+    //   "contrastText": "#043a7b"
+    // },
     "common": { "black": "#000", "white": "#fff" },
     "error": {
       "light": "#e57373",
@@ -268,7 +277,7 @@ MuiListItemIcon:{
       // main: "rgb(70, 111, 216)",
       // dark: '#426cd7',
       // contrastText: "#f2f8ff",
-      main:blue[300],
+      light:blue[300],
       main:blue[500],
       dark:blue[600],
     },

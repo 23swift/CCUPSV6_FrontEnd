@@ -210,7 +210,7 @@ const InstitutionIndex = () => {
     return (
         <Page title="Institution Reference"  hasSearch searchLabel="Institution Code">
 
-            <Card elevation={3}>
+            <Card elevation={2}>
               {/* <CardHeader title={ <CustomToolbar title="Institution List" >
                 <IconButton style={{padding:5}} component={Link} to="/institutionCreate">
                                     <PostAddIcon color="primary" />
@@ -218,7 +218,7 @@ const InstitutionIndex = () => {
                 </CustomToolbar>} 
                 />
                  */}
-                 <CustomToolbar title="Institution List" >
+                 <CustomToolbar >
                 <IconButton  component={Link} to="/institutionCreate/:id=0" color="secondary">
                                     <PostAddIcon color="secondary" />
                               </IconButton>
