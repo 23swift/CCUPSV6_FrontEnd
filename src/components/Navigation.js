@@ -67,7 +67,7 @@ const useStyles = makeStyles(theme => ({
     
   },appBar: {
     zIndex: theme.zIndex.drawer + 1,
-  
+    minWidth:500,
     // backgroundColor:'#043673'
     background: 'linear-gradient(45deg, #054594 30%, #043673 90%)',
   },
@@ -186,7 +186,7 @@ const useStyles = makeStyles(theme => ({
                       <ListItem  disableGutters  >
                       {/* <img src={bdoLogo} style={{height:60}}/> */}
                       <Box display="flex" flexDirection="row" justifyContent="flex-end" style={{width:"100%"}}  p={0} m={0} >
-                        <Box item p={0} m={0}>
+                        <Box item="true" p={0} m={0}>
                            <IconButton color="primary"  onClick={handleDrawerToggle}>
                                 {/* <MenuOpenIcon/> */}
                                 <ClearIcon/>

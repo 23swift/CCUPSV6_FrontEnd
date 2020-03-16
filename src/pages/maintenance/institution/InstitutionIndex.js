@@ -1,14 +1,13 @@
 import React from 'react'
 import Page from './../../../components/Page';
 import InstitutionList from './../../../components/maintenance/institution/InstitutionList';
-import { Paper, Button, IconButton, Card, CardHeader, CardContent, Box } from '@material-ui/core';
-import CustomToolbar from './../../../components/CustomToolbar';
+import {Link} from 'react-router-dom'
+import CustomCard from '../../../components/CustomCard';
+import { IconButton } from '@material-ui/core';
+import PostAddIcon from '@material-ui/icons/PostAdd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import  PostAddIcon  from '@material-ui/icons/PostAdd';
-import {Link} from 'react-router-dom'
-import color from '@material-ui/core/colors/amber';
-
+import { AccountBalance } from '@material-ui/icons';
 const data=[{
     "id": 1,
     "institutionName": "Izio",
@@ -210,61 +209,24 @@ const data=[{
 const InstitutionIndex = () => {
     return (
         <Page title="Institution Reference"  hasSearch searchLabel="Institution Code">
-  <CardHeader title={ 
-  
-  <CustomToolbar title="Institution List" flexGrow={1} >
-              
-                </CustomToolbar>
-          //       <IconButton  component={Link} to="/institutionCreate/:id=0" color="secondary">
-          //       <PostAddIcon color="secondary" />
-          // </IconButton>
-         
-                }
-              
-              style={{
-                borderRadius:3,
-                background: "linear-gradient(60deg, #ffa726, #fb8c00)",
-                boxShadow: "0 4px 20px 0 rgba(0, 0, 0,.14)",
-                padding: 15,
-                color: "#FFF",
-                marginLeft:15,
-                marginRight:15,
-                // zIndex: "100 !important",
-                position:"relative",
-                height:70,
-                // width:"100%"
-                
-             }} subheader={
-              <p style={{
-                color: "rgba(255, 255, 255,.62)",
-                  margin: 0,
-                  fontSize: 14,
-                  marginTop: 0,
-                  marginBottom: 0,
-                  padding:0
-              }} 
-              >Enrolled Intitution as of 15th September, 2016</p>
-             }
-              />
-            <Card elevation={1} style={{marginTop:-40,paddingTop:10}}>
-              
-               
-              
+         {/* <div style={{marginTop:60,marginLeft:10,marginRight:10}}> */}
+ 
              
-                
-                 
-                
-                
-              <CardContent style={{marginTop:40}}>
+             <CustomCard title="Institution List" subHeader="Enrolled Institution as of 15th September, 2016" icon={<AccountBalance/>}
+             tools={
+                <IconButton  component={Link} to="/institutionCreate/:id=0" color="inherit" size="small">
+                                    <PostAddIcon color="inherit" />
+                        
+                                </IconButton> 
+             }>
                  <InstitutionList list={data}/>
-              </CardContent>
+             </CustomCard>
              
-              
-
-            </Card>
-            
+               
+             
 
         </Page>
+        //  </div> 
     )
 }
 

@@ -11,7 +11,8 @@ const themeConfig={
   
   overrides:{
    body:{
-    bgcolor:"#EEEEEE"
+     bgcolor:"#EEEEEE"
+    
   }, 
     MuiButton:{
       label:{
@@ -142,6 +143,7 @@ MuiListItemIcon:{
           color:"rgb(0, 60, 108)",
           // backgroundColor: "#eee",
           margin:0,
+          minWidth:400
           
           
       },

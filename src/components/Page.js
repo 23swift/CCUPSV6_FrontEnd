@@ -17,8 +17,8 @@ root:{
 page:{
     // background: "#f2f8ff",
     // minHeight:800,
-    paddingTop:10,
-    
+    paddingTop:0,
+    minWidth:500,
     marginBottom:60
 },
 searchBar:{
@@ -80,7 +80,7 @@ const Page = (props) => {
     return (
       
         <div className={classes.root}>
-            {props.title &&
+            {props.tools || props.title  &&
             
             
             <Box display="flex" flexDirection="row" >
@@ -109,6 +109,16 @@ const Page = (props) => {
                      
                    
                </Box>}
+                {props.tools && 
+                
+                  <Box>
+                    {
+                      props.tools
+                    }
+                  </Box>
+
+                }
+
                </Box>
             
             }

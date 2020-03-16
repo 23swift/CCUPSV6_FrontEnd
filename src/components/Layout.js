@@ -11,7 +11,7 @@ const useStyles = makeStyles(theme => ({
     main:{
         
          paddingTop:80,
-        
+         minWidth:400,
         // [theme.breakpoints.down('md')]: {
         //     marginLeft:0
         // },

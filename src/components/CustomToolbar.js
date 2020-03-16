@@ -1,35 +1,39 @@
 import React from 'react'
-import { Toolbar, Typography, Divider,AppBar, Paper } from '@material-ui/core';
+import { Toolbar, Typography, Divider,AppBar, Paper, Box } from '@material-ui/core';
 import { grey } from '@material-ui/core/colors';
+import { color } from '@material-ui/core/colors/grey';
 
 const CustomToolbar = (props) => {
     return (
-    //    <AppBar position="sticky" 
-       
-    //    >
-            <div 
-             
-       
-        > 
-                 <Typography   color="inherit" variant="h5" 
-                 style={{flexGrow:1,
-                    color:"#fff",
-                    minHeight: "auto",
-                    fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif;",
-                    fontWeight: 300,
-                    marginBottom: 0,
-                    paddingBottom:0,
-                    textDecoration: "none"
+            <Box  display="flex" p={0} m={0}> 
+            {props.icon &&
+                <Box mr={1}>
                 
-                }}
-                 
-                 >{props.title}</Typography>
-                <div>
-                {props.children}
-                </div>
-            </div>
+                            {props.icon}
+                
+                </Box>
+            }
             
-    //    </AppBar>
+                <Box  flexGrow={1}>
+                   
+                        <Typography   color="inherit" component="span"
+                                        style={{flexGrow:1,
+                                            color:"#fff",
+                                            minHeight: "auto",
+                                            fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
+                                            fontWeight: 300,
+                                            marginBottom: 0,
+                                            paddingBottom:0,
+                                            textDecoration: "none",
+                                            // fontSize: "1.3em"
+                                        }}>
+                        {props.title}</Typography>
+                </Box>
+                <Box  mr={1}>
+                     {props.children}
+                </Box>
+               
+            </Box>
        
     )
 }

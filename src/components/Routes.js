@@ -6,6 +6,9 @@ import Users from '../pages/Users';
 import ApplicationDataEntry from '../pages/ApplicationDataEntry';
 import InstitutionIndex from './../pages/maintenance/institution/InstitutionIndex';
 import InstitutionCreate from './../pages/maintenance/institution/InstitutionCreate';
+
+
+import InstitutionDetails from './../pages/maintenance/institution/InstitutionDetails';
 const Routes = () => {
     return (
         <div>
@@ -24,6 +27,9 @@ const Routes = () => {
                 </Route>
                 <Route path="/institutionCreate">
                     <InstitutionCreate />
+                </Route>
+                <Route path="/institution">
+                    <InstitutionDetails />
                 </Route>
                 
                 <Route path="/">

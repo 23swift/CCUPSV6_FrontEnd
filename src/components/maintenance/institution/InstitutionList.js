@@ -4,7 +4,7 @@ import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
-import { Button, Grid, Fab, Box } from "@material-ui/core";
+import { Button, Grid, Fab, Box, Toolbar } from "@material-ui/core";
 
 import { IconButton } from "@material-ui/core";
 
@@ -82,7 +82,7 @@ const handleChangeRowsPerPage = event => {
                {/* <Fab   color="secondary" size="small"><MoreHorizIcon fontSize="small"/></Fab> */}
                <Button 
               //  onClick={()=>props.handleDetails(item.id)} 
-              component={Link} to={"/institutionDetails/"+item.id}
+              component={Link} to={"/institution/details/"+item.id}
                   color="primary"
                   startIcon={
                 
