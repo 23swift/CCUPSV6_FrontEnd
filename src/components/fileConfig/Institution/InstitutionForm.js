@@ -135,7 +135,7 @@ const InstitutionFormTemplate=(props)=>{
                     </Box>
 
                     </Box>
-                    <hr/>
+                    
                     <Toolbar>
                     <Typography variant="h6" color="secondary" style={{flexGrow:1}}>
                      

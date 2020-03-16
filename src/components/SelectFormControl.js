@@ -24,7 +24,7 @@ const SelectFormControl = (props) => {
 
     return (
         <FormControl 
-                  variant="outlined" 
+                //   variant="outlined" 
                  className={classes.formControl} margin="dense">
                  <InputLabel ref={inputLabel} htmlFor="outlined-age-simple" className={classes.inputLabel}>
                      {props.label}

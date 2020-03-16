@@ -43,7 +43,7 @@ const CustomCard = (props) => {
             >
               
                 
-              <CardContent style={{marginTop:60,padding:10}}>
+              <CardContent style={{marginTop:55,padding:10}}>
                 {props.children}
               </CardContent>
              

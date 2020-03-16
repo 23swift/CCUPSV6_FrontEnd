@@ -117,7 +117,7 @@ const InstitutionDetails = () => {
                     <Button startIcon={<LinkOffIcon />} color="primary">
                         Disenrollment
                             </Button>
-                    <Button startIcon={<SaveAlt />} color="primary">
+                    <Button startIcon={<SaveAlt />} component={Link} to={`${path}/billing-input`} color="primary">
                     Input Billing
                             </Button>
                         <Button startIcon={<RestorePage />} color="primary">

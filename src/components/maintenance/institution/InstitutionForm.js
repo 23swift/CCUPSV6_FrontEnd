@@ -107,7 +107,7 @@ useEffect(() => {
              label="Merchant ID"
              className={classes.textField}
              margin="dense"
-            variant="outlined"
+            // variant="outlined"
              value={values.merchantId}
              name="merchantId" id="merchantId"
               onChange={handleChange} 
@@ -121,7 +121,7 @@ useEffect(() => {
                      label="Billing File Type"
                      className={classes.textField}
                      margin="dense"
-                      variant="outlined"
+                      // variant="outlined"
                      value={values.billingFileType}
                      name="billingFileType" id="billingFileType"
                      onChange={handleChange} 
@@ -138,7 +138,7 @@ useEffect(() => {
                      label="Code"
                      className={classes.textField}
                      margin="dense"
-                      variant="outlined"
+                      // variant="outlined"
                      value={values.institutionCode}
                      name="institutionCode" 
                      id="institutionCode"
@@ -170,7 +170,7 @@ useEffect(() => {
                  label="Institution Name"
                  className={classes.textField}
                  margin="dense"
-                  variant="outlined"
+                  // variant="outlined"
                  value={values.institutionName}
                  name="institutionName" id="institutionName"
                  onChange={handleChange} 
@@ -190,7 +190,7 @@ useEffect(() => {
                  label="Padding Character"
                  className={classes.textField}
                  margin="dense"
-                  variant="outlined"
+                  // variant="outlined"
                  value={values.paddingChar}
                  name="paddingChar" id="paddingChar"
                  onChange={handleChange} 
@@ -204,7 +204,7 @@ useEffect(() => {
                      label="Default Payment Allowed"
                      className={classes.textField}
                      margin="dense"
-                      variant="outlined"
+                      // variant="outlined"
                      value={values.defaultPaymentAllowed}
                      name="defaultPaymentAllowed" id="defaultPaymentAllowed"
                      onChange={handleChange} 
@@ -238,7 +238,7 @@ useEffect(() => {
                          label="Batch Number Max Value"
                          className={classes.textField}
                          margin="dense"
-                          variant="outlined"
+                          // variant="outlined"
                          value={values.batchNumberMaxVal}
                          name="batchNumberMaxVal" id="batchNumberMaxVal"
                          onChange={handleChange} 
@@ -251,7 +251,7 @@ useEffect(() => {
                          label="Decline Code Max Length"
                          className={classes.textField}
                          margin="dense"
-                          variant="outlined"
+                          // variant="outlined"
                          value={values.decCodeMaxLen}
                          name="decCodeMaxLen" id="decCodeMaxLen"
                          onChange={handleChange} 
@@ -264,7 +264,7 @@ useEffect(() => {
                          label="Batch Number Initial Value"
                          className={classes.textField}
                          margin="dense"
-                          variant="outlined"
+                          // variant="outlined"
                          value={values.batchNumInitVal}
                          name="batchNumInitVal" id="batchNumInitVal"
                          onChange={handleChange} 
@@ -293,7 +293,7 @@ useEffect(() => {
                          label="Batch Number Length Limit"
                          className={classes.textField}
                          margin="dense"
-                          variant="outlined"
+                          // variant="outlined"
                          value={values.batchNumLenLimit}
                          name="batchNumLenLimit" id="batchNumLenLimit"
                          onChange={handleChange} 
@@ -306,7 +306,7 @@ useEffect(() => {
                          label="Current Batch Number"
                          className={classes.textField}
                          margin="dense"
-                          variant="outlined"
+                          // variant="outlined"
                          value={values.currentbatchNum}
                          name="currentbatchNum" id="currentbatchNum"
                          onChange={handleChange} 
@@ -320,7 +320,7 @@ useEffect(() => {
                          label="Approved Billing Report FN"
                          className={classes.textField}
                          margin="dense"
-                          variant="outlined"
+                          // variant="outlined"
                          value={values.approvedBillingRpt}
                          name="approvedBillingRpt" id="approvedBillingRpt"
                          onChange={handleChange} 
@@ -333,7 +333,7 @@ useEffect(() => {
                          label="Declined Billing Report FN"
                          className={classes.textField}
                          margin="dense"
-                          variant="outlined"
+                          // variant="outlined"
                          value={values.declinedBillingRpt}
                          name="declinedBillingRpt" id="declinedBillingRpt"
                          onChange={handleChange} 
@@ -346,7 +346,7 @@ useEffect(() => {
                          label="Approved Billing Return File FN"
                          className={classes.textField}
                          margin="dense"
-                          variant="outlined"
+                          // variant="outlined"
                          value={values.approvedBillingRtrn}
                          name="approvedBillingRtrn" id="approvedBillingRtrn"
                          onChange={handleChange} 
@@ -359,7 +359,7 @@ useEffect(() => {
                          label="Declined Billing Return FN"
                          className={classes.textField}
                          margin="dense"
-                          variant="outlined"
+                          // variant="outlined"
                          value={values.declinedBillingRtrn}
                          name="declinedBillingRtrn" id="declinedBillingRtrn"
                          onChange={handleChange} 
@@ -372,7 +372,7 @@ useEffect(() => {
                          label="Merch Decline Code Max"
                          className={classes.textField}
                          margin="dense"
-                          variant="outlined"
+                          // variant="outlined"
                          value={values.merchDeclineCodeMax}
                          name="merchDeclineCodeMax" id="merchDeclineCodeMax"
                          onChange={handleChange} 
@@ -385,7 +385,7 @@ useEffect(() => {
                          label="Inst Bill File Type"
                          className={classes.textField}
                          margin="dense"
-                          variant="outlined"
+                          // variant="outlined"
                          value={values.billFileType}
                          name="billFileType" id="billFileType"
                          onChange={handleChange} 
@@ -398,7 +398,7 @@ useEffect(() => {
                          label="Padding Position"
                          className={classes.textField}
                          margin="dense"
-                          variant="outlined"
+                          // variant="outlined"
                          value={values.paddingPosition}
                          name="paddingPosition" id="paddingPosition"
                          onChange={handleChange} 
@@ -411,7 +411,7 @@ useEffect(() => {
                          label="Padding Character"
                          className={classes.textField}
                          margin="dense"
-                          variant="outlined"
+                          // variant="outlined"
                          value={values.paddingChar}
                          name="paddingChar" id="paddingChar"
                          onChange={handleChange} 

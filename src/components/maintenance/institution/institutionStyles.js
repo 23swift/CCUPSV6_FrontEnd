@@ -9,7 +9,8 @@ export const useStyles = makeStyles(theme => ({
       top: 'auto',
       bottom: 0,
       zIndex: theme.zIndex.drawer + 1,
-      background:theme.palette.background.paper
+       background:theme.palette.background.paper
+      
     },
     container: {
       display: "flex",
