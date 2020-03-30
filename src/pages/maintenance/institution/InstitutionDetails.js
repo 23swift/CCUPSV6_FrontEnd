@@ -1,7 +1,7 @@
 import React from 'react'
-import BillingInput from '../../../components/fileConfig/billingInput/BillingInput';
+
 import Page from '../../../components/Page';
-import { makeStyles, Drawer, List, ListItem, ListItemText, Grid, Paper, ListItemIcon, Divider, IconButton, MenuItem, Menu, Fab, Button, Toolbar, Typography } from '@material-ui/core';
+import { makeStyles, Drawer, List, ListItem, ListItemText, Grid, Paper, ListItemIcon, Divider, IconButton, MenuItem, Menu, Fab, Button, Toolbar, Typography, CardContent, CardHeader, Card } from '@material-ui/core';
 
 import { Route,Link,Switch,   useParams,
     useRouteMatch} from 'react-router-dom'
@@ -13,8 +13,10 @@ import MenuOpenIcon from '@material-ui/icons/MenuOpen';
 import LinkOffIcon from '@material-ui/icons/LinkOff';
 import SettingsIcon from '@material-ui/icons/Settings';
 import { Box } from '@material-ui/core';
-
-
+import InstitutionForm from '../../../components/maintenance/institution/InstitutionForm';
+import MenuIcon from '@material-ui/icons/Menu';
+import DetailsIcon from '@material-ui/icons/Details';
+import BillingInput from '../../../components/maintenance/institution/BillingInput';
 
 const drawerWidth = 240;
 
@@ -32,16 +34,20 @@ const useStyles = makeStyles(theme => ({
       },
       menuIcon:{
         marginRight:10,
-        color:theme.palette.primary.light
+        color:theme.palette.primary.main
       },
-      menuItem:{marginLeft:8,marginRight:8,borderRadius:3,
-        color:theme.palette.primary.dark
+      menuItem:{margin:8,borderBottomLeftRadius :15,
+        borderTopLeftRadius:15,
+        color:theme.palette.primary.main,minWidth:200,
+        "&:hover":{
+          backgroundColor:"#f2f8ff"
+        }
     }
 }));
 const InstitutionDetails = () => {
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
-
+    const open = Boolean(anchorEl);
     const handleMenuClick = event => {
       setAnchorEl(event.currentTarget);
     };
@@ -52,90 +58,81 @@ const InstitutionDetails = () => {
     let { path, url } = useRouteMatch();
 
     return (
-        <Page title="Billing File Configuration" tools={
-            <>
-            {/* <Fab color="primary"  size="large" onClick={handleMenuClick} variant="extended"  style={{width:100,right:-30,padding:0,position:"fixed"}}
-            props>
-                <SettingsIcon  fontSize="large" style={{marginRight:50}}/>
-                
-            </Fab>
-             <Menu 
-             id="simple-menu"
-             anchorEl={anchorEl}
-             keepMounted
-             open={Boolean(anchorEl)}
-             onClose={handleMenuClose}
-                style={{paddingTop:0}}
-                
-           >
+       
+
+        <Card style={{marginTop:60,marginLeft:12,marginRight:12}}>
+            <CardHeader subheader="Manila Electric Company"  title={
                
-                    <MenuItem className={classes.menuItem} onClick={handleMenuClose} >
-                    <AccountBalance className={classes.menuIcon} />
-                        Institution
-                        </MenuItem>
-                        
-                    <MenuItem onClick={handleMenuClose} className={classes.menuItem}>
-                    <NoteAdd className={classes.menuIcon} />
-                        Enrollment</MenuItem>
-                        
-                    <MenuItem onClick={handleMenuClose} className={classes.menuItem}>
-                    <LinkOffIcon className={classes.menuIcon} />
-                        Disenrollment</MenuItem>
-                        
-                    <MenuItem onClick={handleMenuClose} className={classes.menuItem}>
-                        <SaveAlt className={classes.menuIcon}/>
-                        Input Billing
-                    </MenuItem>
-                    
-                    <MenuItem onClick={handleMenuClose} className={classes.menuItem}>
-                        <RestorePage className={classes.menuIcon}/>
-                        Billing Return
-                    </MenuItem>
-                    
-                    <MenuItem onClick={handleMenuClose} className={classes.menuItem}>
-                        <InsertChartOutlined className={classes.menuIcon}/>
-                        Billing Report
-                    </MenuItem>
-             
-                   
-           </Menu> */}
-           <Toolbar variant="dense">
-               <Box display="flex" width="100%" >
+                     <Toolbar variant="dense" style={{backgroundColor:"#fff",marginLeft:0,paddingLeft:0}}>
+                     <Box display="flex" width="100%" style={{marginLeft:0,paddingLeft:0}}>
+      
+                          <Box  flexGrow={1} color="primary">
+                              <Typography variant="h3" color="primary">
+                                Meralco
+                                </Typography>
+                          </Box>
+                          <Box >
+      
+                                  <Fab onClick={handleMenuClick} color="secondary" size="small" >
+                                        <MenuIcon/>
+                                  </Fab>
+                                  <Menu
+                                      id="simple-menu"
+                                      anchorEl={anchorEl}
+                                      keepMounted
+                                      open={open}
+                                      onClose={handleMenuClose}
+                                      style={{marginTop:70}}
+                                      
+                                    >
+                                      <List dense>
+                                        <ListItem onClick={handleMenuClose}  color="primary" button
+                                       
+                                      className={classes.menuItem}>
+                                      <ListItemIcon className={classes.menuIcon}><DetailsIcon  />
+                                    </ListItemIcon>
+                                    <ListItemText primary="Details" />
+                                        </ListItem>
+                                      <ListItem onClick={handleMenuClose} color="primary" button
+                                      className={classes.menuItem}>
+                                     <ListItemIcon className={classes.menuIcon}>
+                                       <NoteAdd  />
+                                    </ListItemIcon>
+                                        Enrollment
+                                        </ListItem>
+                                      <ListItem onClick={handleMenuClose} color="primary" button
+                                       className={classes.menuItem}>
+                                          <ListItemIcon className={classes.menuIcon}>
+                                       <LinkOffIcon  />
+                                    </ListItemIcon>
+                                        Disenrollment</ListItem>
+                                    <ListItem onClick={handleMenuClose} color="primary" button component={Link} to={`${path}/billing-input`}
+                                       className={classes.menuItem}>
+                                          <ListItemIcon className={classes.menuIcon}>
+                                       <SaveAlt />
+                                    </ListItemIcon>
+                                        Input BIlling</ListItem>
+                                        <ListItem onClick={handleMenuClose} color="primary" button
+                                       className={classes.menuItem}>
+                                         <ListItemIcon className={classes.menuIcon}>
+                                          <InsertChartOutlined />
+                                        </ListItemIcon>
+                                        Billing Report</ListItem>
 
-                    <Box  flexGrow={1} color="primary">
-                        <Typography variant="h3" color="primary">
-                        Institution Setup
-                        </Typography>
-                    </Box>
-                    <Box >
+                                      </List>
+                                      
+                                    </Menu>
+                                    
+                          </Box>
+      
+                     </Box>
+                 
+                 </Toolbar>
+            }/>
 
-                    
-                    <Button startIcon={<NoteAdd />} color="primary">
-                            Enrollment
-                    </Button>
-
-                    <Button startIcon={<LinkOffIcon />} color="primary">
-                        Disenrollment
-                            </Button>
-                    <Button startIcon={<SaveAlt />} component={Link} to={`${path}/billing-input`} color="primary">
-                    Input Billing
-                            </Button>
-                        <Button startIcon={<RestorePage />} color="primary">
-                        Billing Return
-                            </Button>
-                            <Button startIcon={<InsertChartOutlined />} color="primary">
-                            Billing Report
-                            </Button>
-                    </Box>
-
-               </Box>
+            
+            <CardContent style={{paddingTop:0}}>
            
-           </Toolbar>
-           </>
-        } >
-        
-              
-                    {/* <BillingInput /> */}
                 <main className={classes.content} style={{minWidth:500}}>
                 <Switch>
                     <Route exact path={path} />
@@ -145,7 +142,7 @@ const InstitutionDetails = () => {
                             {/* <Route exact path="/content-config" component={ContentConfig} />
                         <Route exact path="/footer-config" component={FooterConfig} /> */}
                         <Route exact path={`${path}/billing-input`} component={BillingInput} />
-                        <Route exact path={`${path}/details/:id`} component={Institution} />
+                        <Route exact path={`${path}/details/:id`} component={InstitutionForm} />
                         <Route exact path={`${path}/product`} component={Product} />
                 </Switch> 
                     
@@ -153,13 +150,8 @@ const InstitutionDetails = () => {
                     
                     
                 </main>
-          
-           
-           
-          
-          
-            
-        </Page>
+            </CardContent>
+        </Card>
     )
 }
 

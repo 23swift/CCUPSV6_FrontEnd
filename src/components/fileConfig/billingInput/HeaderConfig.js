@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Typography, Toolbar, Fab, Drawer, Divider, List, ListItem, ListItemIcon, ListItemText, Box } from '@material-ui/core';
+import { Typography, Toolbar, Fab, Drawer, Divider, List, ListItem, ListItemIcon, ListItemText, Box, IconButton } from '@material-ui/core';
 
 import ConfigList from './../common/ConfigList';
 import ConfigTestArea from './../common/ConfigTestArea';
@@ -234,16 +234,16 @@ export default class  HeaderConfig extends Component {
     return (
         <>
       
-       <Toolbar style={{backgroundColor:grey[50],marginTop:4}}>
+       <Toolbar style={{backgroundColor:grey[50],marginTop:0,borderRadius:4,padding:5}}>
              
              <Typography  variant="h5" color="primary"  style={{flexGrow:1}}>
                                  Header Configuration
                                
                  </Typography>
                 
-                    <Fab size="small" aria-label="Edit" className={useStyles.fab} color="secondary"  onClick={this.handleClickOpen}>
+                    <IconButton size="small" aria-label="Edit" className={useStyles.fab} color="secondary"  onClick={this.handleClickOpen}>
                       <AddIcon />
-                  </Fab>
+                  </IconButton>
                   <FormDialog open={this.state.openDialog} handleClickOpen={this.handleClickOpen} currentItem={null}
                    handleClose={this.handleClose} addFunction={this.addConfig} dataTypeList={this.state.dataTypeList}/> 
                 </Toolbar> 

@@ -13,7 +13,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {  faHome,  faTools,  faDatabase,  faSearch,  faShieldAlt,  faBell,
   faPowerOff,  faInfo, faArrowDown, faChevronDown} from "@fortawesome/free-solid-svg-icons";
 
-import { Drawer, List, ListItem, ListItemIcon, ListItemText, Paper, Divider, Box } from "@material-ui/core";
+import { Drawer, List, ListItem, ListItemIcon, ListItemText, Paper, Divider, Box, Fab } from "@material-ui/core";
 import MenuOpenIcon from '@material-ui/icons/MenuOpen';
 
 
@@ -37,7 +37,7 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1
   },
   menuButton: {
-    marginRight: theme.spacing(2)
+    marginRight: theme.spacing(1)
   },
   title: {
     flexGrow: 1
@@ -59,17 +59,21 @@ const useStyles = makeStyles(theme => ({
   },
   drawerPaper: {
     width: drawerWidth,
-    background:"#fff",
-    
+    // background:"#fff",
+    // background:theme.palette.primary.main,
+    background: 'linear-gradient(90deg, #054594 30%, #043673 90%)',
     // backgroundColor: "#f2f8ff",
     // color: "#043673",
-    paddingRight:10,
+    paddingRight:5,
+   
     
   },appBar: {
     zIndex: theme.zIndex.drawer + 1,
     minWidth:500,
     // backgroundColor:'#043673'
-    background: 'linear-gradient(45deg, #054594 30%, #043673 90%)',
+    // background: 'linear-gradient(45deg, #054594 30%, #043673 90%)',
+    background:"#fff",
+    color:"#043673"
   },
   fullWidthAppBar: {
     // zIndex: theme.zIndex.drawer + 1,
@@ -82,12 +86,13 @@ const useStyles = makeStyles(theme => ({
     color:theme.palette.primary.light
   },
   drawerIconPaper:{
-    padding:10,
+    padding:5,
     backgroundColor:theme.palette.primary.dark
   },
   drawerListItem:{
         borderBottomRightRadius :30,
         borderTopRightRadius:30,
+        color:"#fff",
         // button:{
         //   "&.hover":{
         //   backgroundColor: "#f2f8ff"
@@ -131,14 +136,15 @@ const useStyles = makeStyles(theme => ({
   <IconButton onClick={handleDrawerToggle}
                         edge="start"
                         className={classes.menuButton}
-                        color="inherit"
+                        color="primary"
                         aria-label="menu"
+                        // size="small"
                       >
                         {/* <MenuIcon /> */}
                         <MenuOpenIcon/>
           </IconButton>
 }
-           <Paper style={{padding:3, marginRight:7}} elevation={0}>
+           <Paper style={{padding:3, marginRight:7,marginLeft:0}} elevation={0}>
                   <img src={bdoLogo} style={{height:40,borderRadius:3}}/>
             </Paper>
 
@@ -146,12 +152,7 @@ const useStyles = makeStyles(theme => ({
             Credit Card Utility Payment System
           </Typography>
     
-    <Button
-                  color="inherit"
-                  startIcon={<FontAwesomeIcon icon={faInfo} />}
-                >
-                  About
-                </Button>
+    
              
               <IconButton color="inherit">
                 {" "}
@@ -187,7 +188,7 @@ const useStyles = makeStyles(theme => ({
                       {/* <img src={bdoLogo} style={{height:60}}/> */}
                       <Box display="flex" flexDirection="row" justifyContent="flex-end" style={{width:"100%"}}  p={0} m={0} >
                         <Box item="true" p={0} m={0}>
-                           <IconButton color="primary"  onClick={handleDrawerToggle}>
+                           <IconButton color="secondary"  onClick={handleDrawerToggle}>
                                 {/* <MenuOpenIcon/> */}
                                 <ClearIcon/>
                               </IconButton>

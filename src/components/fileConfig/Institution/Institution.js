@@ -17,8 +17,9 @@ export default function Institution() {
     const classes = useStyles();
     return (
         
-            <CustomCard title="Institution Details" icon={<AccountBalance/>}>
-                 <InstitutionForm/>
-            </CustomCard>
+            // <CustomCard title="Institution Details" icon={<AccountBalance/>}>
+            //      
+            // </CustomCard>
+            <InstitutionForm/>
     )
 }

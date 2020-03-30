@@ -1,11 +1,11 @@
 import React from 'react'
-import { Typography, Divider, makeStyles, Box, TextField, AppBar, Toolbar, IconButton, Paper, fade, InputBase, Grow} from '@material-ui/core';
+import { Typography, Divider, makeStyles, Box, TextField, AppBar, Toolbar, IconButton, Paper, fade, InputBase, Grow, Link} from '@material-ui/core';
 
 import {  } from '@material-ui/core/IconButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { grey } from '@material-ui/core/colors';
-
+import PostAddIcon from '@material-ui/icons/PostAdd';
 const useStyles=makeStyles(theme=>({
 root:{
     marginTop:48,
@@ -18,7 +18,7 @@ page:{
     // background: "#f2f8ff",
     // minHeight:800,
     paddingTop:0,
-    minWidth:500,
+    // minWidth:500,
     marginBottom:60
 },
 searchBar:{
@@ -26,7 +26,8 @@ searchBar:{
     display: 'flex',
     alignItems: 'center',
     width: 400,
-    background:theme.palette.primary.main,
+    // background:theme.palette.primary.main,
+    backgroundColor:"#f2f8ff"
     
 },input:  {
     padding: theme.spacing(1, 1, 1, 7),
@@ -55,6 +56,7 @@ searchBar:{
     backgroundColor: fade(theme.palette.primary.main, 0.10),
     '&:hover': {
       backgroundColor: fade(theme.palette.primary.main, 0.15),
+     
     },
     marginLeft: 0,
     width: '100%',
@@ -80,7 +82,7 @@ const Page = (props) => {
     return (
       
         <div className={classes.root}>
-            {props.tools || props.title  &&
+            { props.title  &&
             
             
             <Box display="flex" flexDirection="row" >
@@ -108,7 +110,9 @@ const Page = (props) => {
                          
                      
                    
-               </Box>}
+               </Box>
+               }
+              
                 {props.tools && 
                 
                   <Box>

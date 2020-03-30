@@ -4,25 +4,32 @@ import CustomToolbar from './CustomToolbar';
 const CustomCard = (props) => {
     return (
         <div>
-            <CardHeader style={{margin:0}}  title={ 
-                          <CustomToolbar title={props.title} flexGrow={1} icon={props.icon} >
-                                {props.tools}
-                            </CustomToolbar>
-                }
+          
+            <Card elevation={1} 
+            style={{
+              marginTop:15,
+              padding:10}}
+            >
+                {/* <CardHeader style={{margin:0}} 
+                //    title={ 
+                //           <CustomToolbar title={props.title} flexGrow={1} icon={props.icon} >
+                //                 {props.tools}
+                //             </CustomToolbar>
+                // }
               
               style={{
                 borderRadius:3,
                 background: "linear-gradient(60deg, #ffa726, #ff981a)",
-                // background: "#ffa726",
+                
                 boxShadow: "0 4px 20px 0 rgba(0, 0, 0,.14)",
                 padding: 10,
                 color: "#FFF",
-                marginLeft:15,
-                marginRight:15,
-                // zIndex: "100 !important",
+                marginLeft:5,
+                marginRight:5,
+               
                 position:"relative",
                 height:75,
-                // width:"100%"
+               
                 
              }} subheader={
               <p style={{
@@ -35,15 +42,9 @@ const CustomCard = (props) => {
               }} 
               >{ props.subHeader}</p>
              }
-              />
-            <Card elevation={1} 
-            style={{
-              marginTop:-55,
-              padding:10}}
-            >
-              
+              /> */}
                 
-              <CardContent style={{marginTop:55,padding:10}}>
+              <CardContent style={{marginTop:10,padding:10}}>
                 {props.children}
               </CardContent>
              

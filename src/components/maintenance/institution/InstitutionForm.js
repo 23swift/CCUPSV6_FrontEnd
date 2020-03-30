@@ -82,9 +82,9 @@ useEffect(() => {
             {id==0 || id==undefined ? "Add":"Update"} Institution
           </Typography>
       
-        <IconButton color="secondary" component={Link} to="/institutionIndex">
+        {/* <IconButton color="secondary" component={Link} to="/institutionIndex">
           <CloseIcon/>
-        </IconButton>
+        </IconButton> */}
       </Grid>
 
     

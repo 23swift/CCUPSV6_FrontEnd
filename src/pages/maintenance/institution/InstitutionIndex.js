@@ -209,16 +209,13 @@ const data=[{
 const InstitutionIndex = () => {
     return (
         <Page title="Institution Reference"  hasSearch searchLabel="Institution Code">
-         {/* <div style={{marginTop:60,marginLeft:10,marginRight:10}}> */}
+        
  
              
-             <CustomCard title="Institution List" subHeader="Enrolled Institution as of 15th September, 2016" icon={<AccountBalance/>}
-             tools={
-                <IconButton  component={Link} to="/institutionCreate/:id=0" color="inherit" size="small">
-                                    <PostAddIcon color="inherit" />
-                        
-                                </IconButton> 
-             }>
+             <CustomCard 
+           
+             >
+                
                  <InstitutionList list={data}/>
              </CustomCard>
              
@@ -226,7 +223,7 @@ const InstitutionIndex = () => {
              
 
         </Page>
-        //  </div> 
+       
     )
 }
 

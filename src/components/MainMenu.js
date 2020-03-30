@@ -12,20 +12,25 @@ const useStyles = makeStyles(theme => ({
   
   
     drawerIcon:{
-      color:"#3d4977"
+      // color:"#3d4977"
+      color:theme.palette.secondary.main,
     //   color:theme.palette.primary.light
     },
     nested: {
-        paddingLeft: theme.spacing(4),
+        // paddingLeft: theme.spacing(1),
       },
     drawerListItem:{
           borderBottomRightRadius :30,
           borderTopRightRadius:30,
-        marginRight:10,
+         
+        // marginRight:10,
+       
+        color:"#fff",
           '&:hover':{
           
-            // color: "#f2f8ff",
-            backgroundColor: "#f2f8ff"
+            color: theme.palette.primary.main,
+            backgroundColor: "#f2f8ff",
+           
           
                       
           },
@@ -33,7 +38,23 @@ const useStyles = makeStyles(theme => ({
   
           
     },
+    subMenu:{
+      background:theme.palette.primary.light,
+      marginTop:5
+      
+      
+    },
+    subMenuItem:{
 
+      color:"#fff",
+          '&:hover':{
+          
+            color: theme.palette.primary.main,
+            backgroundColor: "#f2f8ff",
+
+                      
+          },
+    }
 
   
   }));
@@ -65,24 +86,26 @@ const MainMenu = () => {
                                 
                                 </ListItemIcon>
 
-                                <ListItemText primary={<Typography color="primary"  style={{fontWeight:400,fontSize:"15px"}} >{item.displayText}</Typography>} />
+                                <ListItemText primary={<Typography   style={{fontWeight:400,fontSize:"15px"}} >{item.displayText}</Typography>} />
                                 
                                 <FontAwesomeIcon icon={openSubMenu === item.mainMenu? faChevronUp:faChevronDown} size="sm" className={classes.drawerIcon} /> 
                                 
                             </ListItem>
-                            <Collapse in={openSubMenu === item.mainMenu} timeout="auto" unmountOnExit>
+                            <Collapse in={openSubMenu === item.mainMenu} timeout="auto" unmountOnExit className={classes.subMenu}
+                            
+                           >
 
                            {item.subMenu.length>0 && <div className="scrollbar scrollbar-primary">
-                                <List component="div" disablePadding >
+                                {/* <List component="div" disablePadding  > */}
                                   {item.subMenu.map((subItem,index)=>(
 
-                                      <ListItem button className={classes.nested} component={Link} to={subItem.url} key={index}>
-                                        <ListItemText primary={<Typography color="primary"  style={{fontWeight:500,fontSize:15}} >{subItem.displayText}</Typography>}/>
+                                      <ListItem  button  component={Link} to={subItem.url} key={index} className={classes.subMenuItem}>
+                                        <ListItemText primary={<Typography   style={{fontWeight:500,fontSize:15}} >{subItem.displayText}</Typography>}/>
                                   
                                     </ListItem>
                                   ))}
                                     
-                                </List>
+                                {/* </List> */}
                             </div>}
                                 
                             </Collapse>
@@ -94,11 +117,11 @@ const MainMenu = () => {
             ))}
             
                     
-            <ListItem button component={Link} to="/">
+            <ListItem button component={Link} to="/" className={classes.drawerListItem} >
                                 <ListItemIcon>
                                 <FontAwesomeIcon icon={faColumns} size="sm" className={classes.drawerIcon} /> 
                                 </ListItemIcon>
-                            <ListItemText primary={<Typography color="primary">Dashboard</Typography>}/>
+                            <ListItemText primary={<Typography color="inherit">Dashboard</Typography>}/>
                             </ListItem>
                
     </div>

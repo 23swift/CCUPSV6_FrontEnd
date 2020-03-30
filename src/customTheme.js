@@ -14,6 +14,20 @@ const themeConfig={
      bgcolor:"#EEEEEE"
     
   }, 
+  MuiFab:{
+    extended:{
+      boxShadow:"0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(255, 152, 0, 0.4)",
+      
+  }},
+  MuiTab:{
+    root:{
+      padding: "2px 2px"
+    },
+    labelIcon: {
+    minHeight: 60,
+    // paddingTop: 9
+}
+},
     MuiButton:{
       label:{
          textDecoration: "none",
@@ -143,7 +157,7 @@ MuiListItemIcon:{
           color:"rgb(0, 60, 108)",
           // backgroundColor: "#eee",
           margin:0,
-          minWidth:400
+          minWidth:200
           
           
       },
@@ -186,32 +200,33 @@ MuiListItemIcon:{
     }
   },
  
-  MuiListItem:{
-    button:{
+  // MuiListItem:{
+  //   button:{
       
-                '&:hover':{
-                  textDecoration: "none",
-                  background: lightBlue[500],
-                  color:"#ffff",
-                  boxShadow: '0px 1px 5px 0px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 3px 1px -2px rgba(0,0,0,0.12)'
+    
+  //               '&:hover':{
+  //                 textDecoration: "none",
+  //                 background: lightBlue[500],
+  //                 color:"#ffff",
+  //                 boxShadow: '0px 1px 5px 0px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 3px 1px -2px rgba(0,0,0,0.12)'
                             
-                },
-                "&.Mui-selected": {
-                  backgroundColor: lightBlue[500],
-                  boxShadow: '0px 1px 5px 0px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 3px 1px -2px rgba(0,0,0,0.12)',
-                  color:"#FFF"
-                },
-                "&.Mui-selected:hover":{ 
-                  backgroundColor: lightBlue[500],
-                  boxShadow: '0px 1px 5px 0px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 3px 1px -2px rgba(0,0,0,0.12)',
-                  color:"#FFF"
-                }
+  //               },
+  //               "&.Mui-selected": {
+  //                 backgroundColor: lightBlue[500],
+  //                 boxShadow: '0px 1px 5px 0px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 3px 1px -2px rgba(0,0,0,0.12)',
+  //                 color:"#FFF"
+  //               },
+  //               "&.Mui-selected:hover":{ 
+  //                 backgroundColor: lightBlue[500],
+  //                 boxShadow: '0px 1px 5px 0px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 3px 1px -2px rgba(0,0,0,0.12)',
+  //                 color:"#FFF"
+  //               }
               
           
-      },
+  //     },
   
-  },
-  
+  // },
+ 
   "palette": {
     "tonalOffset": 0.2,
     // "background": { "paper": "#fafafa", "default": "#fafafa" },
@@ -265,25 +280,25 @@ MuiListItemIcon:{
     },
 
      primary: {
-      light: '#5767a8',
-      main: '#3d4977',
-      // main:"#f2f8ff",
-      dark: '#343e65',
+      light: '#0651ac',
+      // main: '#3d4977',
+      main:"#043673",
+      dark: '#042e62',
       contrastText: "#f2f8ff",
 
     },
     secondary: {
-      // light: '#fdc435',
-      // main: '#FDB913',
-      // dark: '#fcb603',
-      // contrastText: '#eeeeee',
+      light: '#fdc435',
+      main: '#FDB913',
+      dark: '#fcb603',
+      contrastText: '#eeeeee',
       // light: '#6c8de0',
       // main: "rgb(70, 111, 216)",
       // dark: '#426cd7',
       // contrastText: "#f2f8ff",
-      light:blue[300],
-      main:blue[500],
-      dark:blue[600],
+      // light:blue[300],
+      // main:blue[500],
+      // dark:blue[600],
     },
     info: {
       light: lightBlue[300],

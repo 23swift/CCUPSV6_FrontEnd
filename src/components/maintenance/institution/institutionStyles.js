@@ -70,30 +70,7 @@ export const useStyles = makeStyles(theme => ({
       color:theme.palette.info.main
     },
     
-scrollbar: {
-  // height:470,
-  width:"100%",padding:10,
-  maxHeight:400,
-  // "height": "300px;",
-  "overflow-y": "auto",
 
-  "scrollbar-width": "thin;",
-   "scrollbar-color":" #3d4977 #ced4da;",
-  // "scrollbar-highlight-color":"dimgrey",
-  marginBottom:10
-  }
-  ,
-  notchedOutline: {
-    // borderWidth: "1px",
-        //   '&:hover':{
-        //   borderColor:   "yellow !important"
-        // },
-        // "&:hover:not($disabled):not($focused):not($error)": {
-        //   borderColor: "red !important"
-        // },
-        borderColor:   theme.palette.secondary.main
-      // "yellow !important"
-  },
   
   }));
 
@@ -111,8 +88,9 @@ scrollbar: {
     marginBottom: theme.spacing(2)
   },
   table: {
-    minWidth: 500
     
+    //  maxWidth:"100%",
+    minWidth: 300,
   },
 
   addButton: {
@@ -158,6 +136,14 @@ scrollbar: {
     fontWeight:300,
     fontSize:"1em",
     borderBottom:"1px solid rgb(51, 120, 175)",
-    color:theme.palette.warning.main
-  }
+    color:theme.palette.warning.main,
+    width:100
+  },
+  appBar: {
+    top: 'auto',
+    bottom: 0,
+    zIndex: theme.zIndex.drawer + 1,
+     background:theme.palette.background.paper
+    
+  },
 }));

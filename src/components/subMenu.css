@@ -1,13 +1,14 @@
 
 .scrollbar {
-    margin-left: 16px;
+    /* margin-left: 16px; */
     float: left;
-    height: 300px;
+    /* margin-top: 20px; */
+    max-height: 300px;
     overflow-y: scroll;
-    margin-bottom: 25px;
+    /* margin-bottom: 25px; */
     /* background-color: linear-gradient(180deg, #5c6bc0 0%, #3949ab 100%);  */
     scrollbar-width: thin;
-    scrollbar-color: #3d4977 #ced4da;
-    scrollbar-highlight-color:dimgrey
+    /* scrollbar-color: #3d4977 #ced4da;
+    scrollbar-highlight-color:dimgrey */
     }
     

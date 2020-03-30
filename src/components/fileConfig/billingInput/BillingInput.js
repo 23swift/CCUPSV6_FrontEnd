@@ -1,5 +1,5 @@
 import React from 'react'
-import { Typography, makeStyles, Toolbar } from '@material-ui/core';
+import { Typography, makeStyles, Toolbar, Button, Fab } from '@material-ui/core';
 import { AppBar, Tabs, Tab } from '@material-ui/core';
 import HeaderConfig from './HeaderConfig';
 import ContentConfig from './ContentConfig';
@@ -19,6 +19,19 @@ const useStyles = makeStyles(theme => ({
     
       appBar:{
         backgroundColor:theme.palette.background.default,
+      },
+      tab:{
+        textTransform:'none',
+        // minWidth:120,
+        color:"#fff",
+        // borderColor:theme.palette.primary.main,
+        // backgroundColor:"red",
+        // margin:2,
+        maxHeight:10,
+        // padding:1
+        // boxShadow:"0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(255, 152, 0, 0.4)",
+        // background:"#ff9800"
+        
       }
   }));
 function TabContainer(props) {
@@ -43,22 +56,23 @@ export default function BillingInput() {
         <>
             
             
-            <AppBar position="static" style={{background: "linear-gradient(60deg, #ffa726, #ff981a)"}}>
-              <Toolbar >
-              <SaveAlt color="secondary"/>
-              <Typography   variant="h6" style={{padding:"3px",margin:0,flexGrow:1}} >
+           
+              <Toolbar style={{padding:0}} >
+             
+              <Typography   variant="subtitle1" style={{padding:"2px",margin:0,flexGrow:1}} color="primary">
                         Billing Input File Configuration
                     </Typography>
-                    <Tabs variant="fullWidth"  value={value}   onChange={handleChange}  >
-                         <Tab label="Header"  icon={<FeaturedPlayList/>} />
-                         <Tab label="Content"   icon={<FormatAlignLeft/>} />
-                        <Tab label="Footer" icon={<Subtitles/>} />
-                </Tabs>
+                    
 
               
               </Toolbar>
-                    
-            </AppBar>
+                    <Tabs style={{borderColor:"#fff"}}  value={value}   onChange={handleChange} indicatorColor="primary" 
+                    >
+                         <Tab label="Header" component={Fab} variant="extended" color="secondary"  className={classes.tab}/>
+                         <Tab label="Content" component={Button}  color="primary" icon={<FormatAlignLeft color="primary" style={{margin:0,padding:0}}/>} className={classes.tab}/>
+                        <Tab label="Footer" component={Button}  color="primary" icon={<Subtitles color="primary" style={{margin:0,padding:0}}/>}  className={classes.tab}/>
+                </Tabs>
+           
             
                 {value === 0 && <TabContainer><HeaderConfig/></TabContainer>}
                 {value === 1 && <TabContainer><ContentConfig/></TabContainer>}
